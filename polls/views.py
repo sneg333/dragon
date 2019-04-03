@@ -22,3 +22,27 @@ def contact(request):
         'contact':contact,
         }
     return render(request,'polls/contact.html', context)
+
+def dostiop(request):
+    dostiop = Dost_Oplat.objects.all()
+
+    context = {
+        'dostiop':dostiop,
+    }
+    return render(request, 'polls/dostiop.html', context)
+
+def usluga(request):
+    usluga = Usluga.objects.all()
+
+    context = {
+        'usluga': usluga,
+    }
+    return render(request, 'polls/usluga.html', context)
+
+def garantija(request):
+    garantija = Garantija.objects.all()
+
+    context = {
+        'garantija': garantija,
+    }
+    return render(request, 'polls/garantija.html', context)

@@ -26,6 +26,30 @@ class Gallery(models.Model):
     def __str__(self):
         return self.title_gallery
 
+class Usluga(models.Model):
+    title_usluga = models.CharField(max_length=200, verbose_name='услуга')
+    body_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
+    body2_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
+
+    class Meta:
+        verbose_name = 'услуга'
+        verbose_name_plural = 'услуга'
+
+    def __str__(self):
+        return self.title_usluga
+
+class Garantija(models.Model):
+    title_garantija = models.CharField(max_length=200, verbose_name='гарантия')
+    body_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
+    body2_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
+
+    class Meta:
+        verbose_name = 'гарантия'
+        verbose_name_plural = 'гарантия'
+
+    def __str__(self):
+        return self.title_garantija
+
 class Contact(models.Model):
     title_contact = models.CharField(max_length=200, verbose_name='контакт')
     body_contact = RichTextUploadingField(blank=True, default='', verbose_name='текст')

@@ -1,1 +1,46 @@
 {% extends 'index.html' %}
+
+{% block glavbody %}
+{% for dom in dom %}
+<div class="cont span_2_of_about">
+    <h3>{{dom.dom_title}}</h3>
+    <p>{{dom.big_text|safe}}</p>
+
+    <h5 class="m_6">Meet Our Team</h5>
+    <div class="section group">
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img.jpg" title="continue" alt=""/></a>
+            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
+            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
+        </div>
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img1.jpg" title="continue" alt=""/></a>
+            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
+            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
+        </div>
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img2.jpg" title="continue" alt=""/></a>
+            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
+            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <!-- Add fancyBox main JS and CSS files
+ <script>
+     $(document).ready(function() {
+         $('.popup-with-zoom-anim').magnificPopup({
+             type: 'inline',
+             fixedContentPos: false,
+             fixedBgPos: true,
+             overflowY: 'auto',
+             closeBtnInside: true,
+             preloader: false,
+             midClick: true,
+             removalDelay: 300,
+             mainClass: 'my-mfp-zoom-in'
+     });
+ });
+ </script>-->
+</div>
+{% endfor %}
+{%endblock%}

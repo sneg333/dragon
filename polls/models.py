@@ -5,7 +5,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 class Dom(models.Model):
     dom_title = models.CharField(max_length=200, verbose_name='заголовок')
-    big_text= RichTextUploadingField(max_length=200, verbose_name='главный большой текст')
+    big_text= RichTextUploadingField(verbose_name='главный большой текст')
 
     class Meta:
         verbose_name = 'дом'

@@ -57,9 +57,10 @@ body{
 	width:20.5%;
 }
 .cssmenu{
-	float:right;
+	/*float:right;********************************верхнее меню лево право центр= text-align:center;******/
+	margin-left:19%;
 	color:#96e8fc;
-	font-size: 0.8125em;
+	font-size: 1.1em;
 }
 .cssmenu ul li {
 	display: inline-block;
@@ -67,7 +68,7 @@ body{
 .cssmenu ul li a {
 	color:#fff;
 	display: block;
-	margin:10px;
+	margin:20px;
 }
 .cssmenu li> a:hover {
 	color: #ACEAFA;

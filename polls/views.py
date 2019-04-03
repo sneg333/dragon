@@ -13,3 +13,12 @@ def home(request):
         'dom':dom,
     }
     return render(request,'polls/home.html', context)
+
+
+def contact(request):
+    contact = Contact.objects.all()
+
+    context = {
+        'contact':contact,
+        }
+    return render(request,'polls/contact.html', context)

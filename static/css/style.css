@@ -116,16 +116,18 @@ body{
 	color:#00405d;
 	text-decoration:underline;
 }
+/*упревление шириной второго меню*/
 .header-bottom-left{
 	float:left;
-	width: 64.5%;
+	width: 75.5%;
 	margin-top:10px;
 }
 .header-bottom-right{
 	float:right;
-	width:30.5%;
+	width:20.5%;
 	margin-top:10px;
 }
+/*упревление шириной второго меню*/
 .search {
 	background:#fff;
 	border: 1px solid #ddd;

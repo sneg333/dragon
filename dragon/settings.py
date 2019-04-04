@@ -129,8 +129,9 @@ STATICFILES_DIRS = [
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
-CKEDITOR_UPLOAD_PATH = 'uploads'
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
+CKEDITOR_UPLOAD_PATH = 'uploads'
 CKEDITOR_CONFIGS = {
     'default': {
         'toolbar': [['Source', 'Link', 'Unlink', 'SpecialChar', 'Image', 'CodeSnippet']],

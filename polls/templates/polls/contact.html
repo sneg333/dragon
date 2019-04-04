@@ -1,2 +1,24 @@
 {% extends 'contact.html' %}
+{% load crispy_forms_tags %}
 
+{% block form %}
+
+	<form method="post" action="">
+		{% csrf_token %}
+			<div class="row">
+				<div class="col-6" style= "margin-left: 10px">
+       			{{ form.first_name|as_crispy_field}}
+				</div>
+				<div class="col-6" style= "margin-left: 10px">
+       			{{ form.email|as_crispy_field}}
+				</div>
+				<div class="col-6" style= "margin-left: 10px">
+				{{ form.body_zakaz|as_crispy_field}}
+				</div>
+			</div>
+            <div class="submit" style= "margin-left: 10px">
+           		<input type="submit" value="Отправить">
+            </div>
+    </form>
+
+{% endblock %}

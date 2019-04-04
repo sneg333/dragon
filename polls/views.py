@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404
 from .models import *
+from .forms import ZakazCreateForm
 from django.db.models import Q
 from django.http import Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.core.urlresolvers import reverse
+
 
 
 def home(request):
@@ -13,15 +14,6 @@ def home(request):
         'dom':dom,
     }
     return render(request,'polls/home.html', context)
-
-
-def contact(request):
-    contact = Contact.objects.all()
-
-    context = {
-        'contact':contact,
-        }
-    return render(request,'polls/contact.html', context)
 
 def dostiop(request):
     dostiop = Dost_Oplat.objects.all()
@@ -46,3 +38,33 @@ def garantija(request):
         'garantija': garantija,
     }
     return render(request, 'polls/garantija.html', context)
+
+def contact(request):
+    contact = Contact.objects.all()
+    zakaz = Zakaz.objects.all()
+    form = ZakazCreateForm(request.POST or None)
+
+    if request.method == "POST":
+        form = ZakazCreateForm(request.POST)
+        if form.is_valid():
+            post = Zakaz()
+            post.first_name = form.cleaned_data['first_name']
+            post.email = form.cleaned_data['email']
+            post.body_zakaz = form.cleaned_data['body_zakaz']
+            post.save()
+            return HttpResponseRedirect(reverse('contactyes'))
+        else:
+            form = ZakazCreateForm()
+    context = {
+        'contact':contact,
+        'zakaz': zakaz,
+        'form': form,
+        }
+    return render(request,'polls/contact.html', context)
+
+def contactyes(request):
+    contact = Contact.objects.all()
+    context = {
+        'contact': contact,
+    }
+    return render(request, 'polls/contactyes.html', context)

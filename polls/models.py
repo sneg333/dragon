@@ -74,6 +74,20 @@ class Dost_Oplat(models.Model):
     def __str__(self):
         return self.title_dostiop
 
+class Zakaz(models.Model):
+    first_name = models.CharField(max_length=200, verbose_name='Имя')
+    email = models.EmailField()
+    body_zakaz = models.CharField(max_length=400, verbose_name='текст')
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+    paid = models.BooleanField(default=False)
+    comment = RichTextUploadingField(blank=True, default='', verbose_name='комментарий')
+
+    class Meta:
+        ordering = ('-created',)
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
 class Tovar(models.Model):
     title_tovar = models.CharField(max_length=400, verbose_name='товар')
     body_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст')

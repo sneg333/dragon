@@ -5,8 +5,6 @@ from django.db.models import Q
 from django.http import Http404, HttpResponseRedirect
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
-
-
 def home(request):
     dom = Dom.objects.all()
 
@@ -68,3 +66,10 @@ def contactyes(request):
         'contact': contact,
     }
     return render(request, 'polls/contactyes.html', context)
+
+def tovar(request):
+    tovar = Tovar.objects.all()
+    context = {
+        'tovar': tovar,
+    }
+    return render(request, 'polls/tovar.html', context)

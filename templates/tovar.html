@@ -4,31 +4,62 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Кондиционеры</title>
+<title>Free Leoshop Website Template | Single:: w3layouts</title>
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-
     <link href="{% static 'css/style.css' %}" rel="stylesheet" />
     <link href="{% static 'css/form.css' %}" rel="stylesheet" />
-    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
-
+<link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
 <script src="{% static 'js/jquery1.min.js' %}"></script>
-
 <!-- start menu -->
     <link href="{% static 'css/megamenu.css' %}" rel="stylesheet" />
-
 <script src="{% static 'js/megamenu.js' %}"></script>
 
 <script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
-<!--start slider -->
-    <link href="{% static 'css/fwslider.css' %}" rel="stylesheet" />
-    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
-    <script src="{% static 'js/css3-mediaqueries.js' %}"></script>
-    <script src="{% static 'js/fwslider.js' %}"></script>
+<script src="{% static 'js/jquery.jscrollpane.min.js' %}"></script>
 
-<!--end slider -->
-    <script src="{% static 'js/jquery.easydropdown.js' %}"></script>
+		<script type="text/javascript" id="sourcecode">
+			$(function()
+			{
+				$('.scroll-pane').jScrollPane();
+			});
+		</script>
+<!-- start details -->
+<script src="{% static 'js/slides.min.jquery.js' %}"></script>
 
+   <script>
+		$(function(){
+			$('#products').slides({
+				preload: true,
+				preloadImage: 'img/loading.gif',
+				effect: 'slide, fade',
+				crossfade: true,
+				slideSpeed: 350,
+				fadeSpeed: 500,
+				generateNextPrev: true,
+				generatePagination: false
+			});
+		});
+	</script>
+    <link href="{% static 'css/etalage.css' %}" rel="stylesheet" />
+<script src="{% static 'js/jquery.etalage.min.js' %}"></script>
+
+<script>
+			jQuery(document).ready(function($){
+
+				$('#etalage').etalage({
+					thumb_image_width: 360,
+					thumb_image_height: 360,
+					source_image_width: 900,
+					source_image_height: 900,
+					show_hint: true,
+					click_callback: function(image_anchor, instance_id){
+						alert('Callback example:\nYou clicked on an image with the anchor: "'+image_anchor+'"\n(in Etalage instance: "'+instance_id+'")');
+					}
+				});
+
+			});
+		</script>
 </head>
 <body>
        <div class="header-top">
@@ -64,8 +95,8 @@
 			</div>
 			<div class="clear"></div>
  		</div>
-	  </div>
-	 <div class="header-bottom">
+	</div>
+	<div class="header-bottom">
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
@@ -157,7 +188,6 @@
 			</ul>
 			</div>
 		</div>
-
 	   <div class="header-bottom-right">
          <div class="search">
 				<input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
@@ -168,110 +198,29 @@
      <div class="clear"></div>
      </div>
 	</div>
-       <div class="login">
-          <div class="wrap">
-				<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a>  / About</ul>
-				<div class="section group">
-				   <div class="labout span_1_of_about">
-					 <h3>Testimonials</h3>
-					  <div class="testimonials ">
-						<div class="testi-item">
-						<blockquote class="testi-item_blockquote">
-							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
-							<div class="clear"></div>
-						</blockquote>
-							<small class="testi-meta"><span class="user">Lorem ipsum dolor </span>,
-							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small></div>
-					   </div>
-					   <div class="testimonials ">
-						<div class="testi-item">
-						<blockquote class="testi-item_blockquote">
-							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
-							<div class="clear"></div>
-						</blockquote>
-							<small class="testi-meta"><span class="user">Lorem ipsum dolor</span>,
-							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small></div>
-					   </div>
-				    </div>
-					{% block glavbody %}
+					{% block glavblog %}
 					{%endblock%}
-					<!-- start menu
-				    <div class="cont span_2_of_about">
-				       <h3>Our Mission</h3>
-					   	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-					   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-				        <h5 class="m_6">Meet Our Team</h5>
-				     <div class="section group">
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img.jpg" title="continue" alt=""/></a>
-		                     <div id="small-dialog3" class="mfp-hide">
-							   <div class="pop_up2">
-							   	 <h2>Lorem ipsum </h2>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								 <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie.</p>
-								</div>
-							 </div>
-							 <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img1.jpg" title="continue" alt=""/></a>
-		                    <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-						<div class="col_1_of_about-box span_1_of_about-box">
-						   <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img2.jpg" title="continue" alt=""/></a>
-		                    <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-							 <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-					     </div>
-				        <div class="clear"></div>
-					 </div>
-
-		<script src="{% static 'js/jquery.magnific-popup.js' %}"></script>
-		<link href="{% static 'css/magnific-popup.css' %}" rel="stylesheet" />
-		<script>
-			$(document).ready(function() {
-				$('.popup-with-zoom-anim').magnificPopup({
-					type: 'inline',
-					fixedContentPos: false,
-					fixedBgPos: true,
-					overflowY: 'auto',
-					closeBtnInside: true,
-					preloader: false,
-					midClick: true,
-					removalDelay: 300,
-					mainClass: 'my-mfp-zoom-in'
-			});
-		});
-		</script>
-           </div>
-					-->
-		   <div class="clear"></div>
-		  </div>
-	</div>
-   </div>
-    <div class="footer">
+	<div class="footer">
 		<div class="footer-top">
 			<div class="wrap">
 			  <div class="section group example">
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="../static/images/2.png"><span class="f-text">бесплатная доставка при заказе от $ 100</span><div class="clear"></div></li>
+					  <li><img src="images/2.png"><span class="f-text">Free Shipping on orders over $ 100</span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="col_1_of_2 span_1_of_2">
 					<ul class="f-list">
-					  <li><img src="../static/images/3.png"><span class="f-text">Телефон для связи -222-555-6666 </span><div class="clear"></div></li>
+					  <li><img src="images/3.png"><span class="f-text">Call us! toll free-222-555-6666 </span><div class="clear"></div></li>
 					</ul>
 				</div>
 				<div class="clear"></div>
 		      </div>
 			</div>
 		</div>
-        <div class="footer-middle">
+		<div class="footer-middle">
 			<div class="wrap">
-			 <div class="section group example">
+			  <div class="section group example">
 			  <div class="col_1_of_f_1 span_1_of_f_1">
 				 <div class="section group example">
 				   <div class="col_1_of_f_2 span_1_of_f_2">
@@ -314,7 +263,7 @@
 			 <div class="col_1_of_f_1 span_1_of_f_1">
 			   <div class="section group example">
 				 <div class="col_1_of_f_2 span_1_of_f_2">
-				    <h3>Информация</h3>
+				    <h3>Information</h3>
 						<ul class="f-list1">
 						    <li><a href="#">Duis autem vel eum iriure </a></li>
 				            <li><a href="#">anteposuerit litterarum formas </a></li>
@@ -325,7 +274,7 @@
 			         	</ul>
  				 </div>
 				 <div class="col_1_of_f_2 span_1_of_f_2">
-				   <h3>Наши контакты</h3>
+				   <h3>Contact us</h3>
 						<div class="company_address">
 					                <p>500 Lorem Ipsum Dolor Sit,</p>
 							   		<p>22-56-2-9 Sit Amet, Lorem,</p>
@@ -335,7 +284,6 @@
 					 	 	<p>Email: <span>mail[at]leoshop.com</span></p>
 
 					   </div>
-					   <!--социальные сети
 					   <div class="social-media">
 						     <ul>
 						        <li> <span class="simptip-position-bottom simptip-movable" data-tooltip="Google"><a href="#" target="_blank"> </a></span></li>
@@ -344,30 +292,30 @@
 						        <li><span class="simptip-position-bottom simptip-movable" data-tooltip="Facebook"><a href="#" target="_blank"> </a></span></li>
 						    </ul>
 					   </div>
-					   -->
 				</div>
 				<div class="clear"></div>
 		    </div>
 		   </div>
 		  <div class="clear"></div>
 		    </div>
+		  </div>
 		</div>
 		<div class="footer-bottom">
 			<div class="wrap">
-				<div class="copy">
-			        <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
-		        </div>
-				<div class="f-list2">
+	                <div class="copy">
+			           <p>© 2014 Template by <a href="http://w3layouts.com" target="_blank">w3layouts</a></p>
+		            </div>
+		       <div class="f-list2">
 				<ul>
 					<li class="active"><a href="about.html">About Us</a></li> |
 					<li><a href="delivery.html">Delivery & Returns</a></li> |
 					<li><a href="delivery.html">Terms & Conditions</a></li> |
 					<li><a href="contact.html">Contact Us</a></li>
 				</ul>
-				</div>
+			  </div>
 				<div class="clear"></div>
 		      </div>
 			</div>
 		</div>
- </body>
+</body>
 </html>

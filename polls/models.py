@@ -89,7 +89,8 @@ class Zakaz(models.Model):
         verbose_name_plural = 'Заказы'
 
 class Tovar(models.Model):
-    title_tovar = models.CharField(max_length=400, verbose_name='товар')
+    title_tovar = models.CharField(max_length=400, verbose_name='Товар')
+    photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')
     body_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст')
     cena = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name='цена')
     body2_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст2')

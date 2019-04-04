@@ -8,5 +8,6 @@ urlpatterns = [
     url(r'^dostiop/$', views.dostiop, name='dostiop'),
     url(r'^usluga/$', views.usluga, name='usluga'),
     url(r'^garantija/$', views.garantija, name='garantija'),
+    url(r'^tovar/$', views.tovar, name='tovar'),
 
 ]

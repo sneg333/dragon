@@ -9,6 +9,12 @@ class ZakazAdmin(admin.ModelAdmin):
 
 admin.site.register(Zakaz, ZakazAdmin)
 
+class TovarAdmin(admin.ModelAdmin):
+    list_display = ['title_tovar']
+    search_fields = ['title_tovar']
+
+admin.site.register(Tovar, TovarAdmin)
+
 admin.site.register(Dom)
 admin.site.register(Dost_Oplat)
 admin.site.register(Usluga)

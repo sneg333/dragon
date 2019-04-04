@@ -20,6 +20,7 @@
 <body>
        <div class="header-top">
 			<div class="wrap">
+				<!--кусок меню слева
 			  <div class="header-top-left">
 			  	   <div class="box">
    				      <select tabindex="4" class="dropdown">
@@ -38,13 +39,14 @@
    				    </div>
    				    <div class="clear"></div>
    			 </div>
+   			 -->
 			 <div class="cssmenu">
 				<ul>
-					<li class="active"><a href="login.html">Account</a></li> |
-					<li><a href="checkout.html">Wishlist</a></li> |
-					<li><a href="checkout.html">Checkout</a></li> |
-					<li><a href="login.html">Log In</a></li> |
-					<li><a href="register.html">Sign Up</a></li>
+					<li class="active"><a href="/{{ home.url }}">О компании</a></li> |
+					<li><a href="/usluga/{{ usluga.url }}">Услуги</a></li> |
+					<li><a href="/dostiop/{{ dostiop.url }}">Доставка и оплата</a></li> |
+					<li><a href="/garantija/{{ garantija.url }}">Гарантия</a></li> |
+					<li><a href="/contact/{{ contact.url }}">Контакты</a></li>
 				</ul>
 			</div>
 			<div class="clear"></div>
@@ -54,12 +56,12 @@
 	    <div class="wrap">
 			<div class="header-bottom-left">
 				<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
 				</div>
 				<div class="menu">
 	            <ul class="megamenu skyblue">
-			<li class="active grid"><a href="index.html">Home</a></li>
-			<li><a class="color4" href="#">women</a>
+			<li class="active grid"><a href="index.html">Вентиляция</a></li>
+			<li><a class="color4" href="#">Кондиционеры</a>
 				<div class="megapanel">
 					<div class="row">
 						<div class="col1">
@@ -99,7 +101,7 @@
 					  </div>
 					</div>
 				</li>
-				<li><a class="color5" href="#">Men</a>
+				<li><a class="color5" href="#">Отопление</a>
 				<div class="megapanel">
 					<div class="col1">
 							<div class="h_nav">
@@ -137,17 +139,18 @@
 						</div>
 					</div>
 				</li>
-				<li><a class="color6" href="other.html">Other</a></li>
-				<li><a class="color7" href="other.html">Purchase</a></li>
+				<li><a class="color6" href="other.html">Осушители</a></li>
+				<li><a class="color7" href="other.html">Увлажнители</a></li>
 			</ul>
 			</div>
 		</div>
 	   <div class="header-bottom-right">
          <div class="search">
-				<input type="text" name="s" class="textbox" value="Search" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+				<input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
 				<input type="submit" value="Subscribe" id="submit" name="submit">
 				<div id="response"> </div>
 		 </div>
+		   <!-- иконы под поиском
 	  <div class="tag-list">
 	    <ul class="icon1 sub-icon1 profile_img">
 			<li><a class="active-icon c1" href="#"> </a>
@@ -167,6 +170,7 @@
 		</ul>
 	    <ul class="last"><li><a href="#">Cart(0)</a></li></ul>
 	  </div>
+		   -->
     </div>
      <div class="clear"></div>
      </div>

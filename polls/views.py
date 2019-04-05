@@ -73,3 +73,11 @@ def tovar(request):
         'tovar': tovar,
     }
     return render(request, 'polls/tovar.html', context)
+
+def tovar_detail(request, tovar_id):
+    tovar_detail = get_object_or_404(Tovar, pk = tovar_id)
+
+    context = {
+        'tovar_detail': tovar_detail,
+    }
+    return render(request, 'polls/tovar_detail.html', context)

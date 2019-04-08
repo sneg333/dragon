@@ -1,32 +1,27 @@
 {% extends 'index.html' %}
 
 {% block glavbody %}
-{% for usluga in usluga %}
-<div class="cont span_2_of_about">
-    <h3>{{usluga.title_usluga}}</h3>
-    <p>{{usluga.body_usluga|safe}}</p>
 
-    <h5 class="m_6">Meet Our Team</h5>
+<div class="cont span_2_of_about">
+  <!--  <h3>{{usluga.title_usluga}}</h3>
+    <p>{{usluga.body_usluga|safe}}</p>
+-->
+    <h5 class="m_6">Наши услуги</h5>
+    {% for usluga in usluga %}
+        {% for uslphoto in usluga.image_usluga.all %}
     <div class="section group">
         <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
+            <a class="popup-with-zoom-anim" href="#small-dialog3">
+                <span class="rollover"></span>
+                <img src="{{uslphoto.photo_gallery.url}}" title="continue" alt=""/>
+            </a>
+            <h4 class="m_7"><a href="#">{{usluga.title_usluga}}</a></h45
+            <p>{{usluga.body_usluga|truncatewords:5|safe}}</p>
         </div>
-        <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img1.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-        </div>
-        <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img2.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-        </div>
-        <div class="clear"></div>
     </div>
-
-        <p>{{usluga.body2_usluga|safe}}</p>
+        {% endfor %}
+    {% endfor %}
+       <!-- <p>{{usluga.body2_usluga|safe}}</p>-->
     <!-- Add fancyBox main JS and CSS files
  <script>
      $(document).ready(function() {
@@ -46,5 +41,5 @@
 </div>
 
 
-{% endfor %}
+
 {%endblock%}

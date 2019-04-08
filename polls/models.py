@@ -30,6 +30,7 @@ class Usluga(models.Model):
     title_usluga = models.CharField(max_length=200, verbose_name='услуга')
     body_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
     body2_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
+    image_usluga = models.ManyToManyField(Gallery, blank=True, verbose_name='фото услуги')
 
     class Meta:
         verbose_name = 'услуга'

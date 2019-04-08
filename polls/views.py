@@ -29,6 +29,14 @@ def usluga(request):
     }
     return render(request, 'polls/usluga.html', context)
 
+def usluga_detail(request, usluga_id):
+    usluga_detail = get_object_or_404(Usluga, pk = usluga_id)
+
+    context = {
+        'usluga_detail': usluga_detail,
+    }
+    return render(request, 'polls/usluga_detail.html', context)
+
 def garantija(request):
     garantija = Garantija.objects.all()
 

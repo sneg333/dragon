@@ -15,6 +15,16 @@ class TovarAdmin(admin.ModelAdmin):
 
 admin.site.register(Tovar, TovarAdmin)
 
+class KatalogAdmin(admin.ModelAdmin):
+	prepopulated_fields = {"slug": ("title_katalog",)}
+
+admin.site.register(Katalog, KatalogAdmin)
+
+class PodKatalogAdmin(admin.ModelAdmin):
+	prepopulated_fields = {"slug": ("title_podkatalog",)}
+
+admin.site.register(PodKatalog, PodKatalogAdmin)
+
 admin.site.register(Dom)
 admin.site.register(Dost_Oplat)
 admin.site.register(Usluga)

@@ -28,6 +28,7 @@ class Gallery(models.Model):
 
 class Usluga(models.Model):
     title_usluga = models.CharField(max_length=200, verbose_name='услуга')
+    title2_usluga = models.CharField(blank=True, max_length=200, verbose_name='услуга')
     body_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
     body2_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
     image_usluga = models.ManyToManyField(Gallery, blank=True, verbose_name='фото услуги')
@@ -89,6 +90,8 @@ class Zakaz(models.Model):
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
 
+
+
 class Tovar(models.Model):
     title_tovar = models.CharField(max_length=400, verbose_name='Товар')
     photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')
@@ -102,3 +105,29 @@ class Tovar(models.Model):
 
     def __str__(self):
         return self.title_tovar
+
+class PodKatalog(models.Model):
+    title_podkatalog = models.CharField(max_length=200, verbose_name='подкаталог')
+    slug = models.SlugField('slug')
+    tovar_podkatalog = models.ManyToManyField(Tovar, verbose_name='товар')
+    image_podkatalog = models.ImageField(upload_to='podkatalog', blank=True)
+
+    class Meta:
+        verbose_name = 'подкаталог'
+        verbose_name_plural = 'подкаталог'
+
+    def __str__(self):
+        return self.title_podkatalog
+
+class Katalog(models.Model):
+    title_katalog = models.CharField(max_length=200, verbose_name='каталог')
+    slug = models.SlugField('slug')
+    podkatalog_katalog = models.ManyToManyField(PodKatalog, verbose_name='подкаталог', blank=True)
+    image_catalog = models.ManyToManyField(Gallery, verbose_name='фотокаталог', blank=True)
+
+    class Meta:
+        verbose_name = 'каталог'
+        verbose_name_plural = 'каталог'
+
+    def __str__(self):
+        return self.title_katalog

@@ -7,11 +7,37 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 def home(request):
     dom = Dom.objects.all()
+    usluga = Usluga.objects.all()
+    katalog = Katalog.objects.all()
 
     context = {
         'dom':dom,
+        'usluga': usluga,
+        'katalog': katalog,
     }
     return render(request,'polls/home.html', context)
+
+def podkatalog(request, slug):
+    katalog = Katalog.objects.all()
+    podkatalog = PodKatalog.objects.get(slug=slug)
+
+    context = {
+        'katalog':katalog,
+        'podkatalog': podkatalog,
+    }
+    return render(request, 'polls/podkatalog.html', context)
+
+def katalog_one(request, slug):
+    katalog_one = Katalog.objects.get(slug=slug)
+    katalog = Katalog.objects.all()
+    podkatalog = PodKatalog.objects.all()
+
+    context = {
+        'katalog_one': katalog_one,
+        'katalog': katalog,
+        'podkatalog': podkatalog,
+    }
+    return render(request, 'polls/katalog_one.html', context)
 
 def dostiop(request):
     dostiop = Dost_Oplat.objects.all()
@@ -75,10 +101,12 @@ def contactyes(request):
     }
     return render(request, 'polls/contactyes.html', context)
 
-def tovar(request):
-    tovar = Tovar.objects.all()
+def tovar(request, slug):
+    katalog = Katalog.objects.all()
+    podkatalog = PodKatalog.objects.get(slug=slug)
     context = {
-        'tovar': tovar,
+        'katalog': katalog,
+        'podkatalog': podkatalog,
     }
     return render(request, 'polls/tovar.html', context)
 

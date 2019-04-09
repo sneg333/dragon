@@ -3,12 +3,12 @@
 {% block glavbody %}
 
 <div class="cont span_2_of_about">
-  <!--  <h3>{{usluga.title_usluga}}</h3>
-    <p>{{usluga.body_usluga|safe}}</p>
--->
+    <!--  <h3>{{usluga.title_usluga}}</h3>
+      <p>{{usluga.body_usluga|safe}}</p>
+  -->
     <h5 class="m_6">Наши услуги</h5>
     {% for usluga in usluga %}
-        {% for uslphoto in usluga.image_usluga.all %}
+    {% for uslphoto in usluga.image_usluga.all %}
     <div class="section group">
         <div class="col_1_of_about-box span_1_of_about-box">
             <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
@@ -19,9 +19,9 @@
             <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
         </div>
     </div>
-        {% endfor %}
     {% endfor %}
-       <!-- <p>{{usluga.body2_usluga|safe}}</p>-->
+    {% endfor %}
+    <!-- <p>{{usluga.body2_usluga|safe}}</p>-->
     <!-- Add fancyBox main JS and CSS files
  <script>
      $(document).ready(function() {

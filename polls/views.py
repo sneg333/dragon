@@ -40,26 +40,32 @@ def katalog_one(request, slug):
     return render(request, 'polls/katalog_one.html', context)
 
 def dostiop(request):
+    katalog = Katalog.objects.all()
     dostiop = Dost_Oplat.objects.all()
 
     context = {
         'dostiop':dostiop,
+        'katalog': katalog,
     }
     return render(request, 'polls/dostiop.html', context)
 
 def usluga(request):
+    katalog = Katalog.objects.all()
     usluga = Usluga.objects.all()
 
     context = {
         'usluga': usluga,
+        'katalog':katalog,
     }
     return render(request, 'polls/usluga.html', context)
 
 def usluga_detail(request, usluga_id):
+    katalog = Katalog.objects.all()
     usluga_detail = get_object_or_404(Usluga, pk = usluga_id)
 
     context = {
         'usluga_detail': usluga_detail,
+        'katalog': katalog,
     }
     return render(request, 'polls/usluga_detail.html', context)
 

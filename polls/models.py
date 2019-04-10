@@ -94,6 +94,7 @@ class Zakaz(models.Model):
 
 class Tovar(models.Model):
     title_tovar = models.CharField(max_length=400, verbose_name='Товар')
+    image_start = models.ImageField(upload_to='tovar', blank=True)
     photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')
     body_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст')
     cena = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name='цена')
@@ -123,7 +124,6 @@ class Katalog(models.Model):
     title_katalog = models.CharField(max_length=200, verbose_name='каталог')
     slug = models.SlugField('slug')
     podkatalog_katalog = models.ManyToManyField(PodKatalog, verbose_name='подкаталог', blank=True)
-    image_catalog = models.ManyToManyField(Gallery, verbose_name='фотокаталог', blank=True)
 
     class Meta:
         verbose_name = 'каталог'

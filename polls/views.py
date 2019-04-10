@@ -20,10 +20,12 @@ def home(request):
 def podkatalog(request, slug):
     katalog = Katalog.objects.all()
     podkatalog = PodKatalog.objects.get(slug=slug)
+    tovat = Tovar.objects.all()
 
     context = {
         'katalog':katalog,
         'podkatalog': podkatalog,
+        'tovat': tovat,
     }
     return render(request, 'polls/podkatalog.html', context)
 
@@ -107,14 +109,7 @@ def contactyes(request):
     }
     return render(request, 'polls/contactyes.html', context)
 
-def tovar(request, slug):
-    katalog = Katalog.objects.all()
-    podkatalog = PodKatalog.objects.get(slug=slug)
-    context = {
-        'katalog': katalog,
-        'podkatalog': podkatalog,
-    }
-    return render(request, 'polls/tovar.html', context)
+
 
 def tovar_detail(request, tovar_id):
     tovar_detail = get_object_or_404(Tovar, pk = tovar_id)

@@ -3,18 +3,18 @@
 {% block menu %}
 <div class="header-bottom">
     <div class="wrap">
-        <div class="header-bottom-left">
+      <div class="header-bottom-left">
             <div class="logo">
                 <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
             </div>
-            {% for katalog in katalog %}
             <div class="menu">
                 <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
-            {% endfor %}
-        </div>
+      </div>
 
         <div class="header-bottom-right">
             <div class="search">
@@ -31,9 +31,6 @@
 {% block glavbody %}
 
 <div class="cont span_2_of_about">
-    <!--  <h3>{{usluga.title_usluga}}</h3>
-      <p>{{usluga.body_usluga|safe}}</p>
-  -->
     <h5 class="m_6">Наши услуги</h5>
     {% for usluga in usluga %}
     {% for uslphoto in usluga.image_usluga.all %}

@@ -7,13 +7,13 @@
             <div class="logo">
                 <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
             </div>
-            {% for katalog in katalog %}
             <div class="menu">
                 <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
-            {% endfor %}
         </div>
 
         <div class="header-bottom-right">
@@ -26,7 +26,6 @@
         <div class="clear"></div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block glavbody %}

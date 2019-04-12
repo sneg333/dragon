@@ -1,6 +1,34 @@
 {% extends 'contact.html' %}
 {% load crispy_forms_tags %}
 
+{% block menu %}
+<div class="header-bottom">
+    <div class="wrap">
+        <div class="header-bottom-left">
+            <div class="logo">
+                <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+
 {% block form %}
 
 	<form method="post" action="">

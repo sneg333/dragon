@@ -1,20 +1,20 @@
-{% extends 'index.html' %}
+{% extends 'index2.html' %}
 
 {% block menu %}
 <div class="header-bottom">
     <div class="wrap">
-        <div class="header-bottom-left">
+      <div class="header-bottom-left">
             <div class="logo">
-                <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
+                <a href="index.html"><img src="/static/images/logo.jpg" alt=""/></a>
             </div>
-            {% for katalog in katalog %}
             <div class="menu">
                 <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
                 </ul>
             </div>
-            {% endfor %}
-        </div>
+      </div>
 
         <div class="header-bottom-right">
             <div class="search">
@@ -26,16 +26,11 @@
         <div class="clear"></div>
     </div>
 </div>
-
 {% endblock %}
 
 {% block glavbody %}
 
 <div class="cont span_2_of_about">
-    <!--  <h3>{{usluga.title_usluga}}</h3>
-      <p>{{usluga.body_usluga|safe}}</p>
-  -->
-
     <h5 class="m_6">{{ katalog_one.title_katalog }}</h5>
 {% for kataloggit in katalog_one.podkatalog_katalog.all%}
     <div class="section group">
@@ -50,7 +45,6 @@
                     {{kataloggit.title_podkatalog}}
                 </a>
             </h4>
-
         </div>
     </div>
 {% endfor %}

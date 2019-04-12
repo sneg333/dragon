@@ -20,7 +20,6 @@ def home(request):
 def podkatalog(request, slug):
     katalog = Katalog.objects.all()
     podkatalog = PodKatalog.objects.get(slug=slug)
-    tovat = Tovar.objects.all()
 
     context = {
         'katalog':katalog,
@@ -28,6 +27,14 @@ def podkatalog(request, slug):
         'tovat': tovat,
     }
     return render(request, 'polls/podkatalog.html', context)
+
+def tovar_detail(request, tovar_id):
+    tovar_detail = get_object_or_404(Tovar, pk = tovar_id)
+
+    context = {
+        'tovar_detail': tovar_detail,
+    }
+    return render(request, 'polls/tovar_detail.html', context)
 
 def katalog_one(request, slug):
     katalog_one = Katalog.objects.get(slug=slug)
@@ -75,16 +82,19 @@ def usluga_detail(request, usluga_id):
 
 def garantija(request):
     garantija = Garantija.objects.all()
+    katalog = Katalog.objects.all()
     usluga = Usluga.objects.all()
 
     context = {
         'garantija': garantija,
         'usluga': usluga,
+        'katalog': katalog,
     }
     return render(request, 'polls/garantija.html', context)
 
 def contact(request):
     contact = Contact.objects.all()
+    katalog = Katalog.objects.all()
     zakaz = Zakaz.objects.all()
     form = ZakazCreateForm(request.POST or None)
 
@@ -103,6 +113,7 @@ def contact(request):
         'contact':contact,
         'zakaz': zakaz,
         'form': form,
+        'katalog': katalog,
         }
     return render(request,'polls/contact.html', context)
 
@@ -113,12 +124,3 @@ def contactyes(request):
     }
     return render(request, 'polls/contactyes.html', context)
 
-
-
-def tovar_detail(request, tovar_id):
-    tovar_detail = get_object_or_404(Tovar, pk = tovar_id)
-
-    context = {
-        'tovar_detail': tovar_detail,
-    }
-    return render(request, 'polls/tovar_detail.html', context)

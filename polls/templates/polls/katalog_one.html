@@ -37,12 +37,12 @@
   -->
 
     <h5 class="m_6">{{ katalog_one.title_katalog }}</h5>
-
+{% for kataloggit in katalog_one.podkatalog_katalog.all%}
     <div class="section group">
         <div class="col_1_of_about-box span_1_of_about-box">
             <a class="popup-with-zoom-anim" href="/katalog/detail/{{ kataloggit.slug }}">
                 <span class="rollover"></span>
-               {% for kataloggit in katalog_one.podkatalog_katalog.all%}
+
                 <img src="{{ kataloggit.image_podkatalog.url}}" title="continue" alt=""/>
             </a>
             <h4 class="m_7">
@@ -50,10 +50,10 @@
                     {{kataloggit.title_podkatalog}}
                 </a>
             </h4>
-            {% endfor %}
+
         </div>
     </div>
-
+{% endfor %}
     <!-- <p>{{usluga.body2_usluga|safe}}</p>-->
     <!-- Add fancyBox main JS and CSS files
  <script>

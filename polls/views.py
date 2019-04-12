@@ -44,10 +44,12 @@ def katalog_one(request, slug):
 def dostiop(request):
     katalog = Katalog.objects.all()
     dostiop = Dost_Oplat.objects.all()
+    usluga = Usluga.objects.all()
 
     context = {
         'dostiop':dostiop,
         'katalog': katalog,
+        'usluga': usluga,
     }
     return render(request, 'polls/dostiop.html', context)
 
@@ -73,9 +75,11 @@ def usluga_detail(request, usluga_id):
 
 def garantija(request):
     garantija = Garantija.objects.all()
+    usluga = Usluga.objects.all()
 
     context = {
         'garantija': garantija,
+        'usluga': usluga,
     }
     return render(request, 'polls/garantija.html', context)
 

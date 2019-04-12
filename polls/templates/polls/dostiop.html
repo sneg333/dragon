@@ -34,25 +34,21 @@
     <h3>{{dostiop.title_dostiop}}</h3>
     <p>{{dostiop.body_dostiop|safe}}</p>
 
-    <h5 class="m_6">Meet Our Team</h5>
+    <h5 class="m_6">Услуги</h5>
+    {% for usluga in usluga %}
+    {% for uslphoto in usluga.image_usluga.all %}
     <div class="section group">
         <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
+            <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
+                <span class="rollover"></span>
+                <img src="{{uslphoto.photo_gallery.url}}" title="continue" alt=""/>
+            </a>
+            <h4 class="m_7"><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></h4>
+            <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
         </div>
-        <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img1.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-        </div>
-        <div class="col_1_of_about-box span_1_of_about-box">
-            <a class="popup-with-zoom-anim" href="#small-dialog3">  <span class="rollover"></span><img src="../static/images/a-img2.jpg" title="continue" alt=""/></a>
-            <h4 class="m_7"><a href="#">consectetuer adipiscing</a></h4>
-            <p>Lorem ipsum dolor consectetur adipisicing elit, sed do eiusmod.</p>
-        </div>
-        <div class="clear"></div>
     </div>
+    {% endfor %}
+    {% endfor %}
     <!-- Add fancyBox main JS and CSS files
  <script>
      $(document).ready(function() {

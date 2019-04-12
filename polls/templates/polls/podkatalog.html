@@ -37,7 +37,7 @@
 			 <div class="top-box">
 				 {% for podkatalog_vid in podkatalog.tovar_podkatalog.all %}
 				 <div class="col_1_of_3 span_1_of_3">
-					 <a href="/katalog/detail/detail/{{ podkatalog_vid.tovar_id }}">
+					 <a href="/katalog/detail/detail/{{ podkatalog_vid.slugt }}">
 						 <div class="inner_content clearfix">
 							 <div class="product_image">
 								 <img src="{{ podkatalog_vid.image_start.url }}" alt=""/>

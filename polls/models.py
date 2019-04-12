@@ -93,6 +93,7 @@ class Zakaz(models.Model):
 
 
 class Tovar(models.Model):
+    slugt = models.SlugField('slugt')
     title_tovar = models.CharField(max_length=400, verbose_name='Товар')
     image_start = models.ImageField(upload_to='tovar', blank=True)
     photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')

@@ -24,12 +24,12 @@ def podkatalog(request, slug):
     context = {
         'katalog':katalog,
         'podkatalog': podkatalog,
-        'tovat': tovat,
+
     }
     return render(request, 'polls/podkatalog.html', context)
 
-def tovar_detail(request, tovar_id):
-    tovar_detail = get_object_or_404(Tovar, pk = tovar_id)
+def tovar_detail(request, slugt):
+    tovar_detail = get_object_or_404(Tovar, slugt = slugt)
 
     context = {
         'tovar_detail': tovar_detail,

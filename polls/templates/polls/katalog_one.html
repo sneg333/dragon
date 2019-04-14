@@ -1,0 +1,85 @@
+{% extends 'index2.html' %}
+
+{% block menu %}
+<div class="header-bottom">
+    <div class="wrap">
+      <div class="header-bottom-left">
+            <div class="logo">
+                <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+      </div>
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block glavbody %}
+       <div class="login">
+          <div class="wrap">
+				<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a>  / {{ katalog_one.title_katalog }}</ul>
+              				<div class="section group">
+				   <div class="labout span_1_of_about">
+					 <h3>Testimonials</h3>
+					  <div class="testimonials ">
+						<div class="testi-item">
+						<blockquote class="testi-item_blockquote">
+							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
+							<div class="clear"></div>
+						</blockquote>
+							<small class="testi-meta"><span class="user">Lorem ipsum dolor </span>,
+							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small>
+						</div>
+					   </div>
+					   <div class="testimonials ">
+						<div class="testi-item">
+						<blockquote class="testi-item_blockquote">
+							<a href="#">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </a>
+							<div class="clear"></div>
+						</blockquote>
+							<small class="testi-meta"><span class="user">Lorem ipsum dolor</span>,
+							<span class="info">sit amet</span><br><a href="#">http://demolink.org</a></small>
+						</div>
+					   </div>
+				    </div>
+
+<div class="cont span_2_of_about">
+    <h5 class="m_6">{{ katalog_one.title_katalog }}</h5>
+{% for kataloggit in katalog_one.podkatalog_katalog.all%}
+    <div class="section group">
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="/katalog/detail/{{ kataloggit.slug }}">
+                <span class="rollover"></span>
+
+                <img src="{{ kataloggit.image_podkatalog.url}}" title="continue" alt=""/>
+            </a>
+            <h4 class="m_7">
+                <a href="/katalog/detail/{{ kataloggit.slug }}">
+                    {{kataloggit.title_podkatalog}}
+                </a>
+            </h4>
+        </div>
+    </div>
+{% endfor %}
+
+</div>
+                                 <div class="clear"></div>
+		  </div>
+	</div>
+   </div>
+
+{%endblock%}

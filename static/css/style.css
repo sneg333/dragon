@@ -1568,7 +1568,7 @@ ul.kids li.last{
 }
 ul.kids li a{
 	color:#777;
-	font-size:0.85em;
+	font-size:1.2em;
 	padding:10px 12px;
 }
 ul.kids li a:hover{
@@ -1997,15 +1997,14 @@ p.m_text2{
 	font-size: 1em;
 	display: block;
 	padding-top: 22px;
-	padding-left: 40px;
 }
 .testimonials .testi-item .testi-meta {
-	font-size: 1em;
+	font-size: 1.2em;
 	color: #777;
 }
 .testimonials .testi-item .testi-meta a{
 	color:#777;
-	text-decoration:underline;
+	text-decoration: none;
 }
 .testimonials .testi-item .testi-meta a:hover{
 	text-decoration:none;

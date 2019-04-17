@@ -60,16 +60,71 @@
 			 </div>
 		 </div>
 
-			<div class="rsidebar span_1_of_left">
-				<h5 class="m_1">Categories</h5>
-					<ul class="kids">
-						<li><a href="#">Kids</a></li>
-						<li class="last"><a href="#">Glasses Shop</a></li>
-					</ul>
-		    </div>
+			<div class="rsingle span_1_of_single">
+				<h5 class="m_1">Услуги</h5>
+				<ul class="kids">
+					{% for usluga in usluga %}
+					<li><a href="#">{{usluga.title_usluga}}</a></li>
+					{% endfor %}
+				</ul>
+				<script src="js/jquery.easydropdown.js"></script>
+			</div>
 			  <div class="clear"></div>
 			</div>
 		   </div>
 		</div>
 
+{%endblock%}
+
+{% block contacts %}
+<div class="footer-middle">
+    <div class="wrap">
+        <div class="section group example">
+            <div class="col_1_of_f_1 span_1_of_f_1">
+                <div class="section group example">
+                    <div class="col_1_of_f_2 span_1_of_f_2">
+                        <h3>Информация</h3><!--
+                        <ul class="f-list1">
+                            <li><a href="#">Duis autem vel eum iriure </a></li>
+                            <li><a href="#">anteposuerit litterarum formas </a></li>
+                            <li><a href="#">Tduis dolore te feugait nulla</a></li>
+                            <li><a href="#">Duis autem vel eum iriure </a></li>
+                            <li><a href="#">anteposuerit litterarum formas </a></li>
+                            <li><a href="#">Tduis dolore te feugait nulla</a></li>
+                        </ul>-->
+                    </div>
+                    <div class="col_1_of_f_2 span_1_of_f_2">
+                        <h3>Наши контакты</h3>
+                        <div class="company_address"><!--
+                            <p>500 Lorem Ipsum Dolor Sit,</p>
+                            <p>22-56-2-9 Sit Amet, Lorem,</p>
+                            <p>USA</p>
+                            <p>Phone:(00) 222 666 444</p>
+                            <p>Fax: (000) 000 00 00 0</p>
+                            <p>Email: <span>mail[at]leoshop.com</span></p>-->
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p> 2019 developer by <a href="https://www.facebook.com/igork333" target="_blank">I.Karabash</a></p>
+            </div>
+            <div class="f-list2">
+                <ul>
+                    {% for katalog in katalog %}
+                    |
+                    <li><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
 {%endblock%}

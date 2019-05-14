@@ -5,7 +5,7 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
-                <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+                <a href="/{{ home.url }}"><img src="/borej/assets/images/logo.png" alt=""/></a>
             </div>
             {% for katalog in katalog %}
             <div class="menu">
@@ -31,14 +31,13 @@
 <div class="mens">
 	<div class="main">
 		<div class="wrap">
-			<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">гланая</a> / <a href="#">Dolor sit amet</a> / Lorem ipsum dolor sit amet</ul>
+			<ul class="breadcrumb breadcrumb__t"><a class="home" href="/{{ home.url }}">Гланая	</a> / <a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a> / {{ tovar_detail.title_tovar}}</ul>
 			<div class="cont span_2_of_3">
 				<div class="grid images_3_of_2">
 					<ul id="etalage">
 						{% for photo in tovar_detail.photo_tovar.filter %}
 						<li>
 							<a href="optionallink.html">
-
 								<img class="etalage_thumb_image" src="{{ photo.photo_gallery.url }}" class="img-responsive" />
 								<img class="etalage_source_image" src="{{ photo.photo_gallery.url }}" class="img-responsive" title="" />
 							</a>
@@ -49,13 +48,13 @@
 				</div>
 				<div class="desc1 span_3_of_2">
 					<h3 class="m_3">{{ tovar_detail.title_tovar}}</h3>
-					<p class="m_5">{{ tovar_detail.cena}} руб. <br><span class="m_5">ID</span> </p>
+					<p class="m_5">ЦЕНА {{ tovar_detail.cena2}} руб. <br><span class="m_5">ID {{ tovar_detail.iden}}</span> </p>
 					<div class="btn_form">
 						<form>
 							<input type="submit" value="Заказать" title="">
 						</form>
 					</div>
-					<h3 class="m_3">Product Details</h3>
+					<h3 class="m_3">Характеристики</h3>
 					<p class="m_text2">{{ tovar_detail.body_tovar|safe}} </p>
 				</div>
 				<div class="clear"></div>
@@ -116,7 +115,7 @@
 					<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 				</div>
 				<div class="toogle">
-					<h3 class="m_3">Product Details</h3>
+					<h3 class="m_3">Описание</h3>
 					<p class="m_text">{{ tovar_detail.body2_tovar|safe}}</p>
 				</div>
 			</div>
@@ -124,7 +123,7 @@
 				<h5 class="m_1">Услуги</h5>
 				<ul class="kids">
 					{% for usluga in usluga %}
-					<li><a href="#">{{usluga.title_usluga}}</a></li>
+					<li><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></li>
 					{% endfor %}
 				</ul>
 				<script src="js/jquery.easydropdown.js"></script>

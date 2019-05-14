@@ -5,7 +5,7 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
-                <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+                <a href="/{{ home.url }}"><img src="/borej/assets/images/logo.png" alt=""/></a>
             </div>
             {% for katalog in katalog %}
             <div class="menu">
@@ -46,7 +46,7 @@
 								 <div class="cart-left">
 									 <p class="title">{{ podkatalog_vid.title_tovar }}</p>
 									 <div class="price1">
-										 <span class="actual">{{ podkatalog_vid.cena }}</span>
+										 <span class="actual">{{ podkatalog_vid.cena2 }} руб.</span>
 									 </div>
 								 </div>
 								 <div class="cart-right"></div>
@@ -64,7 +64,7 @@
 				<h5 class="m_1">Услуги</h5>
 				<ul class="kids">
 					{% for usluga in usluga %}
-					<li><a href="#">{{usluga.title_usluga}}</a></li>
+					<li><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></li>
 					{% endfor %}
 				</ul>
 				<script src="js/jquery.easydropdown.js"></script>

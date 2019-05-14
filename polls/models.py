@@ -98,7 +98,9 @@ class Tovar(models.Model):
     image_start = models.ImageField(upload_to='tovar', blank=True)
     photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')
     body_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст')
-    cena = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name='цена')
+    cena2 = models.CharField(max_length=200, blank=True, verbose_name='цена')
+   # cena = models.DecimalField(max_digits=10, decimal_places=0, blank=True, verbose_name='цена2')
+    iden = models.DecimalField(max_digits=10, decimal_places=0, blank=True, verbose_name='артикль')
     body2_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст2')
 
     class Meta:

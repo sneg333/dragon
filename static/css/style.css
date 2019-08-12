@@ -390,7 +390,7 @@ ul.last li a:hover{
 .col_1_of_3{
 	display: block;
 	float:left;
-	margin: 1% 0 1% 2.6%;
+	margin: 1% 0 1% 0%;
 	box-shadow:0 0 5px #aaa;
 	-webkit-box-shadow:0 0 5px #aaa;
 	-moz-box-shadow:0 0 5px #aaa;
@@ -1569,7 +1569,7 @@ ul.kids li.last{
 ul.kids li a{
 	color:#777;
 	font-size:1.2em;
-	padding:10px 12px;
+	padding:10px 0px;
 }
 ul.kids li a:hover{
 	color:#000;

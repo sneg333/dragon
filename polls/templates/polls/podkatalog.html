@@ -5,7 +5,7 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
-                <a href="/{{ home.url }}"><img src="/borej/assets/images/logo.png" alt=""/></a>
+                <a href="/{{ home.url }}"><img src="/static/images/logo.png" alt=""/></a>
             </div>
             {% for katalog in katalog %}
             <div class="menu">
@@ -19,7 +19,6 @@
         <div class="header-bottom-right">
             <div class="search">
                 <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="Subscribe" id="submit" name="submit">
                 <div id="response"> </div>
             </div>
         </div>

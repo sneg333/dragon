@@ -15,11 +15,9 @@
                 </ul>
             </div>
         </div>
-
         <div class="header-bottom-right">
             <div class="search">
                 <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="Subscribe" id="submit" name="submit">
                 <div id="response"> </div>
             </div>
         </div>
@@ -57,8 +55,8 @@
 {% endfor %}
 
     {% for usluga in usluga %}
-    {% for uslphoto in usluga.image_usluga.all %}
-    <div class="section group">
+      {% for uslphoto in usluga.image_usluga.all %}
+      <div class="section group">
         <div class="col_1_of_about-box span_1_of_about-box">
             <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
                 <span class="rollover"></span>
@@ -67,8 +65,8 @@
             <h4 class="m_7"><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></h4>
             <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
         </div>
-    </div>
-    {% endfor %}
+      </div>
+      {% endfor %}
     {% endfor %}
     <!-- Add fancyBox main JS and CSS files
  <script>
@@ -86,9 +84,10 @@
      });
  });
  </script>-->
-</div>
-                        <div class="clear"></div>
-        </div>
+    </div>
+      <div class="clear">
+      </div>
+    </div>
     </div>
 </div>
 

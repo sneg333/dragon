@@ -44,6 +44,7 @@ class Garantija(models.Model):
     title_garantija = models.CharField(max_length=200, verbose_name='гарантия')
     body_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
     body2_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
+    is_active = models.BooleanField(default = True)
 
     class Meta:
         verbose_name = 'гарантия'
@@ -102,6 +103,7 @@ class Tovar(models.Model):
    # cena = models.DecimalField(max_digits=10, decimal_places=0, blank=True, verbose_name='цена2')
     iden = models.DecimalField(max_digits=10, decimal_places=0, blank=True, verbose_name='артикль')
     body2_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст2')
+    is_active = models.BooleanField(default=True)
 
     class Meta:
         verbose_name = 'товар'

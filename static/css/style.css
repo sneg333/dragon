@@ -120,7 +120,7 @@ body{
 /*упревление шириной второго меню*/
 .header-bottom-left{
 	float:left;
-	width: 75.5%;
+	width: 77.5%;
 	margin-top:10px;
 }
 .header-bottom-right{
@@ -390,7 +390,7 @@ ul.last li a:hover{
 .col_1_of_3{
 	display: block;
 	float:left;
-	margin: 1% 0 1% 2.6%;
+	margin: 1% 0 1% 0%;
 	box-shadow:0 0 5px #aaa;
 	-webkit-box-shadow:0 0 5px #aaa;
 	-moz-box-shadow:0 0 5px #aaa;
@@ -1568,8 +1568,8 @@ ul.kids li.last{
 }
 ul.kids li a{
 	color:#777;
-	font-size:0.85em;
-	padding:10px 12px;
+	font-size:1.2em;
+	padding:10px 0px;
 }
 ul.kids li a:hover{
 	color:#000;
@@ -1997,15 +1997,14 @@ p.m_text2{
 	font-size: 1em;
 	display: block;
 	padding-top: 22px;
-	padding-left: 40px;
 }
 .testimonials .testi-item .testi-meta {
-	font-size: 1em;
+	font-size: 1.2em;
 	color: #777;
 }
 .testimonials .testi-item .testi-meta a{
 	color:#777;
-	text-decoration:underline;
+	text-decoration: none;
 }
 .testimonials .testi-item .testi-meta a:hover{
 	text-decoration:none;

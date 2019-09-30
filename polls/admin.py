@@ -10,8 +10,8 @@ class ZakazAdmin(admin.ModelAdmin):
 admin.site.register(Zakaz, ZakazAdmin)
 
 class TovarAdmin(admin.ModelAdmin):
-    list_display = ['title_tovar']
-    search_fields = ['title_tovar']
+    list_display = ['id','title_tovar', 'iden']
+    search_fields = ['title_tovar', 'iden']
 
 admin.site.register(Tovar, TovarAdmin)
 

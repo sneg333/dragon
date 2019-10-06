@@ -1,9 +1,9 @@
 from django.contrib import admin
 from .models import *
 
-class TovarPlusInAdmin(admin.TabularInline): # добавление фото прямо во вкладке товара в админке
-    model = Gallery
-    extra = 0 # количество добавок
+# class TovarPlusInAdmin(admin.TabularInline): # добавление фото прямо во вкладке товара в админке
+#     model = Gallery
+#     extra = 0 # количество добавок
 
 class ZakazAdmin(admin.ModelAdmin):
     list_display = ['id', 'first_name', 'email',
@@ -16,7 +16,7 @@ admin.site.register(Zakaz, ZakazAdmin)
 class TovarAdmin(admin.ModelAdmin):
     list_display = ['id','title_tovar', 'iden', 'is_active']
     search_fields = ['title_tovar', 'iden']
-    inlines = [TovarPlusInAdmin]
+    # inlines = [TovarPlusInAdmin]
 
 admin.site.register(Tovar, TovarAdmin)
 

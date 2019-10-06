@@ -150,3 +150,12 @@ def contactyes(request):
     }
     return render(request, 'polls/contactyes.html', context)
 
+def korzina(request):
+    katalog = Katalog.objects.all()
+    usluga = Usluga.objects.all()
+
+    context = {
+        'usluga': usluga,
+        'katalog':katalog,
+    }
+    return render(request, 'polls/korzina.html', context)

@@ -5,26 +5,22 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
-                <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
+                <a href="/{{ home.url }}"><img src="/static/images/logo.png" alt=""/></a>
             </div>
+            {% for katalog in katalog %}
             <div class="menu">
                 <ul class="megamenu skyblue">
-                    {% for katalog in katalog %}
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
-                    {% endfor %}
                 </ul>
             </div>
+            {% endfor %}
         </div>
         <div class="header-bottom-right">
-<!--            поле поиска-->
             <div class="search">
-                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';"
-                       onblur="if (this.value == '') {this.value = 'Search';}">
-                <input type="submit" value="Subscribe" id="submit" name="submit">
-                <div id="response"></div>
-            </div> <br>
-<!--            конец поиска-->
-<!--            поле корзины-->
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <div id="response"> </div>
+            </div>
+            <!--            поле корзины-->
             <div class="tag-list">
                 <ul class="icon1 sub-icon1 profile_img">
                     <li><a class="active-icon c2" href="#"> </a>
@@ -47,52 +43,15 @@
 {% endblock %}
 
 {% block glavbody %}
-<div class="login">
+
+<div class="register_account">
     <div class="wrap">
-        <ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Главная</a> / Доставка и оплата</ul>
-        <div class="section group">
-            <div class="labout span_1_of_about">
-                <h3>Услуги</h3>
-                <div class="testimonials ">
-                    <div class="testi-item">
-                        <small class="testi-meta">
-                            {% for usluga in usluga %}
-                            <span class="user">
-                                <a href="/usluga/{{ usluga.id }}">
-                                {{usluga.title_usluga}}<br><br>
-                                </a>
-                            </span>
-                            {% endfor %}
-                        </small>
-                            <div class="clear"></div>
-                    </div>
-                </div>
-            </div>
-            {% for dostiop in dostiop %}
-            <div class="cont span_2_of_about">
-                <h3>{{dostiop.title_dostiop}}</h3>
-                <p>{{dostiop.body_dostiop|safe}}</p>
-                <h5 class="m_6">Услуги</h5>
-                {% for usluga in usluga %}
-                {% for uslphoto in usluga.image_usluga.all %}
-                <div class="section group">
-                    <div class="col_1_of_about-box span_1_of_about-box">
-                        <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
-                            <span class="rollover"></span>
-                            <img src="{{uslphoto.photo_gallery.url}}" title="continue" alt=""/>
-                        </a>
-                        <h4 class="m_7"><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></h4>
-                        <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
-                    </div>
-                </div>
-                {% endfor %}
-                {% endfor %}
-            </div>
-            {% endfor %}
-            <div class="clear"></div>
-        </div>
+        <h4 class="title">Shopping cart is empty</h4>
+        <p class="cart">You have no items in your shopping cart.<br>Click<a href="index.html"> here</a> to continue shopping</p>
     </div>
 </div>
+
+
 {%endblock%}
 
 {% block contacts %}

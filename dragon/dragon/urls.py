@@ -21,7 +21,10 @@ from django.conf import settings
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'', include('polls.urls')),
+<<<<<<< HEAD
+=======
     url(r'', include('order.urls')),
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
     url(r'^ckeditor/', include('ckeditor_uploader.urls')),
 ]
 

@@ -5,16 +5,33 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
+<<<<<<< HEAD
+                <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
+=======
                 <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
             </div>
             <div class="menu">
                 <ul class="megamenu skyblue">
                     {% for katalog in katalog %}
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+=======
         <div class="header-bottom-right">
 <!--            поле поиска-->
             <div class="search">
@@ -40,6 +57,7 @@
                 </ul>
             </div>
 <!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -47,6 +65,8 @@
 {% endblock %}
 
 {% block glavbody %}
+<<<<<<< HEAD
+=======
 <div class="login">
     <div class="wrap">
         <ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Главная</a></ul>
@@ -68,6 +88,7 @@
                     </div>
                 </div>
             </div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {% for dom in dom %}
 <div class="cont span_2_of_about">
     <h3>{{dom.dom_title}}</h3>
@@ -75,8 +96,13 @@
 {% endfor %}
 
     {% for usluga in usluga %}
+<<<<<<< HEAD
+    {% for uslphoto in usluga.image_usluga.all %}
+    <div class="section group">
+=======
       {% for uslphoto in usluga.image_usluga.all %}
       <div class="section group">
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         <div class="col_1_of_about-box span_1_of_about-box">
             <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
                 <span class="rollover"></span>
@@ -85,8 +111,13 @@
             <h4 class="m_7"><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></h4>
             <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
         </div>
+<<<<<<< HEAD
+    </div>
+    {% endfor %}
+=======
       </div>
       {% endfor %}
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
     {% endfor %}
     <!-- Add fancyBox main JS and CSS files
  <script>
@@ -104,6 +135,10 @@
      });
  });
  </script>-->
+<<<<<<< HEAD
+</div>
+
+=======
     </div>
       <div class="clear">
       </div>
@@ -164,4 +199,5 @@
         </div>
     </div>
 </div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {%endblock%}

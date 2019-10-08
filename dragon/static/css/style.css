@@ -120,7 +120,11 @@ body{
 /*упревление шириной второго меню*/
 .header-bottom-left{
 	float:left;
+<<<<<<< HEAD
+	width: 75.5%;
+=======
 	width: 77.5%;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 	margin-top:10px;
 }
 .header-bottom-right{
@@ -134,7 +138,11 @@ body{
 	border: 1px solid #ddd;
 	position: relative;
 	float:left;
+<<<<<<< HEAD
+	margin:6px 20px 0 0;
+=======
 	margin:-77px 43px 31px 191px;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 }
 .search input[type="text"] {
 	border: none;
@@ -390,7 +398,11 @@ ul.last li a:hover{
 .col_1_of_3{
 	display: block;
 	float:left;
+<<<<<<< HEAD
+	margin: 1% 0 1% 2.6%;
+=======
 	margin: 1% 0 1% 0%;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 	box-shadow:0 0 5px #aaa;
 	-webkit-box-shadow:0 0 5px #aaa;
 	-moz-box-shadow:0 0 5px #aaa;
@@ -1568,8 +1580,13 @@ ul.kids li.last{
 }
 ul.kids li a{
 	color:#777;
+<<<<<<< HEAD
+	font-size:0.85em;
+	padding:10px 12px;
+=======
 	font-size:1.2em;
 	padding:10px 0px;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 }
 ul.kids li a:hover{
 	color:#000;
@@ -1997,14 +2014,25 @@ p.m_text2{
 	font-size: 1em;
 	display: block;
 	padding-top: 22px;
+<<<<<<< HEAD
+	padding-left: 40px;
+}
+.testimonials .testi-item .testi-meta {
+	font-size: 1em;
+=======
 }
 .testimonials .testi-item .testi-meta {
 	font-size: 1.2em;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 	color: #777;
 }
 .testimonials .testi-item .testi-meta a{
 	color:#777;
+<<<<<<< HEAD
+	text-decoration:underline;
+=======
 	text-decoration: none;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 }
 .testimonials .testi-item .testi-meta a:hover{
 	text-decoration:none;
@@ -3141,8 +3169,11 @@ ul.delivery-list li a:hover{
 	.box {
 		width: 55.5%;
 	}
+<<<<<<< HEAD
+=======
 }
 
 .megamenu {
     font-size: 5px;
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 }

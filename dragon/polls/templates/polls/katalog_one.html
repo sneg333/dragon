@@ -3,6 +3,15 @@
 {% block menu %}
 <div class="header-bottom">
     <div class="wrap">
+<<<<<<< HEAD
+      <div class="header-bottom-left">
+            <div class="logo">
+                <a href="index.html"><img src="/static/images/logo.jpg" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                   {% for katalog in katalog %}
+=======
         <div class="header-bottom-left">
             <div class="logo">
                 <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
@@ -10,10 +19,21 @@
             <div class="menu">
                 <ul class="megamenu skyblue">
                     {% for katalog in katalog %}
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
+<<<<<<< HEAD
+      </div>
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+=======
         </div>
         <div class="header-bottom-right">
 <!--            поле поиска-->
@@ -40,6 +60,7 @@
                 </ul>
             </div>
 <!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -47,6 +68,46 @@
 {% endblock %}
 
 {% block glavbody %}
+<<<<<<< HEAD
+
+<div class="cont span_2_of_about">
+    <h5 class="m_6">{{ katalog_one.title_katalog }}</h5>
+{% for kataloggit in katalog_one.podkatalog_katalog.all%}
+    <div class="section group">
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="/katalog/detail/{{ kataloggit.slug }}">
+                <span class="rollover"></span>
+
+                <img src="{{ kataloggit.image_podkatalog.url}}" title="continue" alt=""/>
+            </a>
+            <h4 class="m_7">
+                <a href="/katalog/detail/{{ kataloggit.slug }}">
+                    {{kataloggit.title_podkatalog}}
+                </a>
+            </h4>
+        </div>
+    </div>
+{% endfor %}
+    <!-- <p>{{usluga.body2_usluga|safe}}</p>-->
+    <!-- Add fancyBox main JS and CSS files
+ <script>
+     $(document).ready(function() {
+         $('.popup-with-zoom-anim').magnificPopup({
+             type: 'inline',
+             fixedContentPos: false,
+             fixedBgPos: true,
+             overflowY: 'auto',
+             closeBtnInside: true,
+             preloader: false,
+             midClick: true,
+             removalDelay: 300,
+             mainClass: 'my-mfp-zoom-in'
+     });
+ });
+ </script>-->
+</div>
+
+=======
 <div class="login">
     <div class="wrap">
         <ul class="breadcrumb breadcrumb__t"><a class="home" href="/{{ home.url }}">Home</a> / {{ katalog_one.title_katalog }}</ul>
@@ -144,4 +205,5 @@
         </div>
     </div>
 </div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {%endblock%}

@@ -7,6 +7,23 @@
             <div class="logo">
                 <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
             </div>
+<<<<<<< HEAD
+            {% for katalog in katalog %}
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+=======
             <div class="menu">
                 <ul class="megamenu skyblue">
                     {% for katalog in katalog %}
@@ -40,6 +57,7 @@
                 </ul>
             </div>
 <!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -55,7 +73,11 @@
 			 <div class="top-box">
 				 {% for podkatalog_vid in podkatalog.tovar_podkatalog.all %}
 				 <div class="col_1_of_3 span_1_of_3">
+<<<<<<< HEAD
+					 <a href="/katalog/detail/detail/{{ podkatalog_vid.slugt }}">
+=======
 					 <a href="/katalog/detail/detail/{{ podkatalog_vid.id }}">
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 						 <div class="inner_content clearfix">
 							 <div class="product_image">
 								 <img src="{{ podkatalog_vid.image_start.url }}" alt=""/>
@@ -64,8 +86,12 @@
 								 <div class="cart-left">
 									 <p class="title">{{ podkatalog_vid.title_tovar }}</p>
 									 <div class="price1">
+<<<<<<< HEAD
+										 <span class="actual">{{ podkatalog_vid.cena }}</span>
+=======
 										 <span class="actual">цена {{ podkatalog_vid.cena }}</span><br>
                                          <span class="actual">ID {{ podkatalog_vid.iden}}</span>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 									 </div>
 								 </div>
 								 <div class="cart-right"></div>
@@ -79,6 +105,15 @@
 			 </div>
 		 </div>
 
+<<<<<<< HEAD
+			<div class="rsidebar span_1_of_left">
+				<h5 class="m_1">Categories</h5>
+					<ul class="kids">
+						<li><a href="#">Kids</a></li>
+						<li class="last"><a href="#">Glasses Shop</a></li>
+					</ul>
+		    </div>
+=======
 			<div class="rsingle span_1_of_single">
 				<h5 class="m_1">Услуги</h5>
 				<ul class="kids">
@@ -88,11 +123,14 @@
 				</ul>
 				<script src="js/jquery.easydropdown.js"></script>
 			</div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 			  <div class="clear"></div>
 			</div>
 		   </div>
 		</div>
 
+<<<<<<< HEAD
+=======
     <!--<div class="pagination">-->
         <!--<span class="step-links">-->
             <!--{% if sobitie.has_previous %}-->
@@ -160,4 +198,5 @@
         </div>
     </div>
 </div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {%endblock%}

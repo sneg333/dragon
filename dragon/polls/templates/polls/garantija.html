@@ -9,12 +9,25 @@
             </div>
             <div class="menu">
                 <ul class="megamenu skyblue">
+<<<<<<< HEAD
+                   {% for katalog in katalog %}
+=======
                     {% for katalog in katalog %}
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
                     <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
+<<<<<<< HEAD
+
+        <div class="header-bottom-right">
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"> </div>
+            </div>
+=======
         <div class="header-bottom-right">
 <!--            поле поиска-->
             <div class="search">
@@ -40,6 +53,7 @@
                 </ul>
             </div>
 <!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -47,6 +61,48 @@
 {% endblock %}
 
 {% block glavbody %}
+<<<<<<< HEAD
+{% for garantija in garantija %}
+<div class="cont span_2_of_about">
+    <h3>{{garantija.title_garantija}}</h3>
+    <p>{{garantija.body_garantija|safe}}</p>
+
+    <h5 class="m_6">Услуги</h5>
+    {% for usluga in usluga %}
+    {% for uslphoto in usluga.image_usluga.all %}
+    <div class="section group">
+        <div class="col_1_of_about-box span_1_of_about-box">
+            <a class="popup-with-zoom-anim" href="/usluga/{{ usluga.id }}">
+                <span class="rollover"></span>
+                <img src="{{uslphoto.photo_gallery.url}}" title="continue" alt=""/>
+            </a>
+            <h4 class="m_7"><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></h4>
+            <a href="/usluga/{{ usluga.id }}"><p>{{usluga.body_usluga|truncatewords:5|safe}}</p></a>
+        </div>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    <!-- Add fancyBox main JS and CSS files
+ <script>
+     $(document).ready(function() {
+         $('.popup-with-zoom-anim').magnificPopup({
+             type: 'inline',
+             fixedContentPos: false,
+             fixedBgPos: true,
+             overflowY: 'auto',
+             closeBtnInside: true,
+             preloader: false,
+             midClick: true,
+             removalDelay: 300,
+             mainClass: 'my-mfp-zoom-in'
+     });
+ });
+ </script>-->
+</div>
+
+
+{% endfor %}
+=======
 <div class="login">
     <div class="wrap">
         <ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Главная</a> / Гарантия</ul>
@@ -146,4 +202,5 @@
         </div>
     </div>
 </div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {%endblock%}

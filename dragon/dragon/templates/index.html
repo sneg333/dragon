@@ -1,0 +1,86 @@
+{% load staticfiles %}
+{% load static %}
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Кондиционеры</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+    <link href="{% static 'css/form.css' %}" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Exo+2' rel='stylesheet' type='text/css'>
+
+<script src="{% static 'js/jquery1.min.js' %}"></script>
+
+<!-- start menu -->
+    <link href="{% static 'css/megamenu.css' %}" rel="stylesheet" />
+<!--	JQUERY-->
+<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="{% static 'js/megamenu.js' %}"></script>
+
+<script>$(document).ready(function(){$(".megamenu").megamenu();});</script>
+<!--start slider -->
+    <link href="{% static 'css/fwslider.css' %}" rel="stylesheet" />
+    <script src="{% static 'js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'js/css3-mediaqueries.js' %}"></script>
+    <script src="{% static 'js/fwslider.js' %}"></script>
+
+<!--end slider -->
+    <script src="{% static 'js/jquery.easydropdown.js' %}"></script>
+
+</head>
+<body>
+<div class="header-top">
+	<div class="wrap">
+		<div class="cssmenu">
+			<ul>
+				<li class="active"><a href="/{{ home.url }}">О компании</a></li>
+				|
+				<li><a href="/usluga/{{ usluga.url }}">Услуги</a></li>
+				|
+				<li><a href="/dostiop/{{ dostiop.url }}">Доставка и оплата</a></li>
+				|
+				<li><a href="/garantija/{{ garantija.url }}">Гарантия</a></li>
+				|
+				<li><a href="/contact/{{ contact.url }}">Контакты</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+{% block menu %}
+{% endblock %}
+
+{% block glavbody %}
+{%endblock%}
+
+	<div class="footer">
+		<div class="footer-top">
+			<div class="wrap">
+				<div class="section group example">
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="../static/images/2.png"><span class="f-text">бесплатная доставка при заказе от $ 100</span>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="../static/images/3.png"><span
+									class="f-text">Телефон для связи -222-555-6666 </span>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% block contacts %}
+	{%endblock%}
+</body>
+</html>

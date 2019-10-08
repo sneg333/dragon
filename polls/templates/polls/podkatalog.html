@@ -7,6 +7,7 @@
             <div class="logo">
                 <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
             </div>
+<<<<<<< HEAD
             {% for katalog in katalog %}
             <div class="menu">
                 <ul class="megamenu skyblue">
@@ -22,6 +23,41 @@
                 <input type="submit" value="Subscribe" id="submit" name="submit">
                 <div id="response"> </div>
             </div>
+=======
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                    {% for katalog in katalog %}
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom-right">
+<!--            поле поиска-->
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"></div>
+            </div> <br>
+<!--            конец поиска-->
+<!--            поле корзины-->
+            <div class="tag-list">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c2" href="#"> </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>Products</h3><a href=""></a></li>
+                            <li><p>Lorem ipsum dolor sit amet, consectetuer <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="last">
+                    <li><a href="/korzina/">Корзина(0)</a></li>
+                </ul>
+            </div>
+<!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -37,7 +73,11 @@
 			 <div class="top-box">
 				 {% for podkatalog_vid in podkatalog.tovar_podkatalog.all %}
 				 <div class="col_1_of_3 span_1_of_3">
+<<<<<<< HEAD
 					 <a href="/katalog/detail/detail/{{ podkatalog_vid.slugt }}">
+=======
+					 <a href="/katalog/detail/detail/{{ podkatalog_vid.id }}">
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 						 <div class="inner_content clearfix">
 							 <div class="product_image">
 								 <img src="{{ podkatalog_vid.image_start.url }}" alt=""/>
@@ -46,7 +86,12 @@
 								 <div class="cart-left">
 									 <p class="title">{{ podkatalog_vid.title_tovar }}</p>
 									 <div class="price1">
+<<<<<<< HEAD
 										 <span class="actual">{{ podkatalog_vid.cena }}</span>
+=======
+										 <span class="actual">цена {{ podkatalog_vid.cena }}</span><br>
+                                         <span class="actual">ID {{ podkatalog_vid.iden}}</span>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 									 </div>
 								 </div>
 								 <div class="cart-right"></div>
@@ -60,6 +105,7 @@
 			 </div>
 		 </div>
 
+<<<<<<< HEAD
 			<div class="rsidebar span_1_of_left">
 				<h5 class="m_1">Categories</h5>
 					<ul class="kids">
@@ -67,9 +113,90 @@
 						<li class="last"><a href="#">Glasses Shop</a></li>
 					</ul>
 		    </div>
+=======
+			<div class="rsingle span_1_of_single">
+				<h5 class="m_1">Услуги</h5>
+				<ul class="kids">
+					{% for usluga in usluga %}
+					<li><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></li>
+					{% endfor %}
+				</ul>
+				<script src="js/jquery.easydropdown.js"></script>
+			</div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 			  <div class="clear"></div>
 			</div>
 		   </div>
 		</div>
 
+<<<<<<< HEAD
+=======
+    <!--<div class="pagination">-->
+        <!--<span class="step-links">-->
+            <!--{% if sobitie.has_previous %}-->
+                <!--<a href="?page={{ catalog.previous_page_number }}">назад</a>-->
+            <!--{% endif %}-->
+        <!--<span class="current">-->
+            <!--страница {{ sobitie.number }} из {{ sobitie.paginator.num_pages }}.-->
+        <!--</span>-->
+            <!--{% if sobitie.has_next %}-->
+                <!--<a href="?page={{ sobitie.next_page_number }}">вперёд</a>-->
+            <!--{% endif %}-->
+        <!--</span>-->
+    <!--</div>-->
+
+{%endblock%}
+
+{% block contacts %}
+<div class="footer-middle">
+    <div class="wrap">
+        <div class="section group example">
+            <div class="col_1_of_f_1 span_1_of_f_1">
+                <div class="section group example">
+                    <div class="col_1_of_f_2 span_1_of_f_2">
+                        <h3>Информация</h3><!--
+                        <ul class="f-list1">
+                            <li><a href="#">Duis autem vel eum iriure </a></li>
+                            <li><a href="#">anteposuerit litterarum formas </a></li>
+                            <li><a href="#">Tduis dolore te feugait nulla</a></li>
+                            <li><a href="#">Duis autem vel eum iriure </a></li>
+                            <li><a href="#">anteposuerit litterarum formas </a></li>
+                            <li><a href="#">Tduis dolore te feugait nulla</a></li>
+                        </ul>-->
+                    </div>
+                    <div class="col_1_of_f_2 span_1_of_f_2">
+                        <h3>Наши контакты</h3>
+                        <div class="company_address"><!--
+                            <p>500 Lorem Ipsum Dolor Sit,</p>
+                            <p>22-56-2-9 Sit Amet, Lorem,</p>
+                            <p>USA</p>
+                            <p>Phone:(00) 222 666 444</p>
+                            <p>Fax: (000) 000 00 00 0</p>
+                            <p>Email: <span>mail[at]leoshop.com</span></p>-->
+                        </div>
+                    </div>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="wrap">
+            <div class="copy">
+                <p> 2019 developer by <a href="https://www.facebook.com/igork333" target="_blank">I.Karabash</a></p>
+            </div>
+            <div class="f-list2">
+                <ul>
+                    {% for katalog in katalog %}
+                    |
+                    <li><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="clear"></div>
+        </div>
+    </div>
+</div>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 {%endblock%}

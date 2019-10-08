@@ -5,6 +5,7 @@
     <div class="wrap">
         <div class="header-bottom-left">
             <div class="logo">
+<<<<<<< HEAD
                 <a href="index.html"><img src="../static/images/logo.png" alt=""/></a>
             </div>
             {% for katalog in katalog %}
@@ -22,6 +23,43 @@
                 <input type="submit" value="Subscribe" id="submit" name="submit">
                 <div id="response"> </div>
             </div>
+=======
+                <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                    {% for katalog in katalog %}
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom-right">
+<!--            поле поиска-->
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"></div>
+            </div> <br>
+<!--            конец поиска-->
+<!--            поле корзины-->
+            <div class="tag-list">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c2" href="#"> </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>Products</h3><a href=""></a></li>
+                            <li><p>Lorem ipsum dolor sit amet, consectetuer <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="last">
+                    <li><a href="/korzina/">Корзина(0)</a></li>
+                </ul>
+            </div>
+<!--            конец корзины-->
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
         </div>
         <div class="clear"></div>
     </div>
@@ -32,7 +70,11 @@
 <div class="mens">
 	<div class="main">
 		<div class="wrap">
+<<<<<<< HEAD
 			<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a> / <a href="#">Dolor sit amet</a> / Lorem ipsum dolor sit amet</ul>
+=======
+			<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a> / <a href="#">Услуги</a> / Lorem ipsum dolor sit amet</ul>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 			<div class="cont span_2_of_3">
 				<div class="grid images_3_of_2">
 					<ul id="etalage">
@@ -65,6 +107,7 @@
 				</div>
 			</div>
 			<div class="rsingle span_1_of_single">
+<<<<<<< HEAD
 				<h5 class="m_1">Categories</h5>
 				<ul class="kids">
 					<li><a href="#">Kids</a></li>
@@ -176,6 +219,14 @@
 						<li><a href="#"> <span class="color7"> </span><p class="red">Gray</p></a></li>
 					</ul>
 				</section>
+=======
+				<h5 class="m_1">Услуги</h5>
+				<ul class="kids">
+					{% for usluga in usluga %}
+					<li><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></li>
+					{% endfor %}
+				</ul>
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 				<script src="js/jquery.easydropdown.js"></script>
 			</div>
 			<div class="clear"></div>

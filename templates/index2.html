@@ -31,6 +31,7 @@
 
 </head>
 <body>
+<<<<<<< HEAD
        <div class="header-top">
 			<div class="wrap">
 				<!--кусок меню слева
@@ -273,5 +274,57 @@
 		    </div>
 		</div>
 	</div>
+=======
+<div class="header-top">
+	<div class="wrap">
+		<div class="cssmenu">
+			<ul>
+				<li class="active"><a href="/{{ home.url }}">О компании</a></li>
+				|
+				<li><a href="/usluga/{{ usluga.url }}">Услуги</a></li>
+				|
+				<li><a href="/dostiop/{{ dostiop.url }}">Доставка и оплата</a></li>
+				|
+				<li><a href="/garantija/{{ garantija.url }}">Гарантия</a></li>
+				|
+				<li><a href="/contact/{{ contact.url }}">Контакты</a></li>
+			</ul>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+		{% block menu %}
+		{% endblock %}
+
+		{% block glavbody %}
+		{%endblock%}
+
+	<div class="footer">
+		<div class="footer-top">
+			<div class="wrap">
+				<div class="section group example">
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="/static/images/2.png"><span class="f-text">бесплатная доставка при заказе от $ 100</span>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="col_1_of_2 span_1_of_2">
+						<ul class="f-list">
+							<li><img src="/static/images/3.png"><span
+									class="f-text">Телефон для связи -222-555-6666 </span>
+								<div class="clear"></div>
+							</li>
+						</ul>
+					</div>
+					<div class="clear"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% block contacts %}
+	{%endblock%}
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 </body>
 </html>

@@ -21,18 +21,51 @@ def podkatalog(request, slug):
     katalog = Katalog.objects.all()
     podkatalog = PodKatalog.objects.get(slug=slug)
 
+<<<<<<< HEAD
     context = {
         'katalog':katalog,
         'podkatalog': podkatalog,
+=======
+    # paginator = Paginator(podkatalog, 3)  # Show 25 contacts per page
+    # page = request.GET.get('page')
+    # try:
+    #     sobitie = paginator.page(page)
+    # except PageNotAnInteger:
+    #     # If page is not an integer, deliver first page.
+    #     sobitie = paginator.page(1)
+    # except EmptyPage:
+    #     # If page is out of range (e.g. 9999), deliver last page of results.
+    #     sobitie = paginator.page(paginator.num_pages)
+    #
+    # usluga = Usluga.objects.all()
+
+
+    context = {
+        'katalog':katalog,
+        'podkatalog': podkatalog,
+        'usluga': usluga,
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 
     }
     return render(request, 'polls/podkatalog.html', context)
 
+<<<<<<< HEAD
 def tovar_detail(request, slugt):
     tovar_detail = get_object_or_404(Tovar, slugt = slugt)
 
     context = {
         'tovar_detail': tovar_detail,
+=======
+def tovar_detail(request, tovar_id):
+    usluga = Usluga.objects.all()
+    katalog = Katalog.objects.all()
+    tovar_detail = get_object_or_404(Tovar, pk = tovar_id)
+
+    context = {
+        'tovar_detail': tovar_detail,
+        'usluga': usluga,
+        'katalog': katalog,
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
     }
     return render(request, 'polls/tovar_detail.html', context)
 
@@ -40,11 +73,19 @@ def katalog_one(request, slug):
     katalog_one = Katalog.objects.get(slug=slug)
     katalog = Katalog.objects.all()
     podkatalog = PodKatalog.objects.all()
+<<<<<<< HEAD
+=======
+    usluga = Usluga.objects.all()
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 
     context = {
         'katalog_one': katalog_one,
         'katalog': katalog,
         'podkatalog': podkatalog,
+<<<<<<< HEAD
+=======
+        'usluga': usluga,
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
     }
     return render(request, 'polls/katalog_one.html', context)
 
@@ -73,10 +114,18 @@ def usluga(request):
 def usluga_detail(request, usluga_id):
     katalog = Katalog.objects.all()
     usluga_detail = get_object_or_404(Usluga, pk = usluga_id)
+<<<<<<< HEAD
+=======
+    usluga = Usluga.objects.all()
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 
     context = {
         'usluga_detail': usluga_detail,
         'katalog': katalog,
+<<<<<<< HEAD
+=======
+        'usluga': usluga,
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
     }
     return render(request, 'polls/usluga_detail.html', context)
 
@@ -119,8 +168,28 @@ def contact(request):
 
 def contactyes(request):
     contact = Contact.objects.all()
+<<<<<<< HEAD
     context = {
         'contact': contact,
     }
     return render(request, 'polls/contactyes.html', context)
 
+=======
+    katalog = Katalog.objects.all()
+
+    context = {
+        'contact': contact,
+        'katalog': katalog,
+    }
+    return render(request, 'polls/contactyes.html', context)
+
+def korzina(request):
+    katalog = Katalog.objects.all()
+    usluga = Usluga.objects.all()
+
+    context = {
+        'usluga': usluga,
+        'katalog':katalog,
+    }
+    return render(request, 'polls/korzina.html', context)
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841

@@ -14,6 +14,7 @@ class Dom(models.Model):
     def __str__(self):
         return self.dom_title
 
+<<<<<<< HEAD
 class Gallery(models.Model):
     title_gallery = models.CharField(max_length=150, blank=True)
     photo_gallery = models.ImageField(upload_to='gallery', verbose_name='vse_gallery', blank=True)
@@ -40,10 +41,16 @@ class Usluga(models.Model):
     def __str__(self):
         return self.title_usluga
 
+=======
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 class Garantija(models.Model):
     title_garantija = models.CharField(max_length=200, verbose_name='гарантия')
     body_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
     body2_garantija = RichTextUploadingField(blank=True, default='', verbose_name='гарантия')
+<<<<<<< HEAD
+=======
+    is_active = models.BooleanField(default = True)
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 
     class Meta:
         verbose_name = 'гарантия'
@@ -86,6 +93,7 @@ class Zakaz(models.Model):
     comment = RichTextUploadingField(blank=True, default='', verbose_name='комментарий')
 
     class Meta:
+<<<<<<< HEAD
         ordering = ('-created',)
         verbose_name = 'Заказ'
         verbose_name_plural = 'Заказы'
@@ -107,6 +115,42 @@ class Tovar(models.Model):
 
     def __str__(self):
         return self.title_tovar
+=======
+        verbose_name = 'Заказ'
+        verbose_name_plural = 'Заказы'
+
+class Gallery(models.Model):
+    title_gallery = models.CharField(max_length=400, verbose_name='название фото')
+    photo_gallery = models.ImageField(upload_to='gallery', verbose_name='фото', blank=True)
+    is_active = models.BooleanField(default=True)
+
+    class Meta:
+        verbose_name = 'Фотогаллерея'
+        verbose_name_plural = 'Фотогаллерея'
+
+    def __str__(self):
+        return "%s, %s" % (self.title_gallery, self.is_active)
+
+class Tovar(models.Model):
+    slugt = models.SlugField('slugt', blank=True)
+    title_tovar = models.CharField(max_length=400, verbose_name='Товар')
+    image_start = models.ImageField(upload_to='tovar', blank=True, verbose_name='основное фото товара')
+    body_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст')
+    cena = models.DecimalField(max_digits=10, decimal_places=2, blank=True, verbose_name='цена2')
+    iden = models.DecimalField(max_digits=10, decimal_places=0, blank=True, verbose_name='артикль')
+    body2_tovar = RichTextUploadingField(blank=True, default='', verbose_name='текст2')
+    is_active = models.BooleanField(default=True,  verbose_name='в наличии')
+    photo_tovar = models.ManyToManyField(Gallery, blank=True, verbose_name='фото товара')
+
+    class Meta:
+        verbose_name = 'товар'
+        verbose_name_plural = 'товары'
+
+    def __str__(self):
+        return "%s, %s" % (self.cena, self.title_tovar)
+
+
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841
 
 class PodKatalog(models.Model):
     title_podkatalog = models.CharField(max_length=200, verbose_name='подкаталог')
@@ -131,4 +175,22 @@ class Katalog(models.Model):
         verbose_name_plural = 'каталог'
 
     def __str__(self):
+<<<<<<< HEAD
         return self.title_katalog
+=======
+        return self.title_katalog
+
+class Usluga(models.Model):
+    title_usluga = models.CharField(max_length=200, verbose_name='услуга')
+    title2_usluga = models.CharField(blank=True, max_length=200, verbose_name='услуга')
+    body_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
+    body2_usluga = RichTextUploadingField(blank=True, default='', verbose_name='услуга')
+    image_usluga = models.ManyToManyField(Gallery, blank=True, verbose_name='фото услуги')
+
+    class Meta:
+        verbose_name = 'услуга'
+        verbose_name_plural = 'услуга'
+
+    def __str__(self):
+        return self.title_usluga
+>>>>>>> a67ad82c94aaefd5389dc039041a0b4105c59841

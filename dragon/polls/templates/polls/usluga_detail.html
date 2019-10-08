@@ -1,0 +1,100 @@
+{% extends 'tovar.html' %}
+
+{% block menu %}
+<div class="header-bottom">
+    <div class="wrap">
+        <div class="header-bottom-left">
+            <div class="logo">
+                <a href="index.html"><img src="/static/images/logo.png" alt=""/></a>
+            </div>
+            <div class="menu">
+                <ul class="megamenu skyblue">
+                    {% for katalog in katalog %}
+                    <li class="active grid"><a href="/katalog/{{ katalog.slug }}">{{katalog.title_katalog}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="header-bottom-right">
+<!--            поле поиска-->
+            <div class="search">
+                <input type="text" name="s" class="textbox" value="Поиск" onfocus="this.value = '';"
+                       onblur="if (this.value == '') {this.value = 'Search';}">
+                <input type="submit" value="Subscribe" id="submit" name="submit">
+                <div id="response"></div>
+            </div> <br>
+<!--            конец поиска-->
+<!--            поле корзины-->
+            <div class="tag-list">
+                <ul class="icon1 sub-icon1 profile_img">
+                    <li><a class="active-icon c2" href="#"> </a>
+                        <ul class="sub-icon1 list">
+                            <li><h3>Products</h3><a href=""></a></li>
+                            <li><p>Lorem ipsum dolor sit amet, consectetuer <a href="">adipiscing elit, sed diam</a></p>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+                <ul class="last">
+                    <li><a href="/korzina/">Корзина(0)</a></li>
+                </ul>
+            </div>
+<!--            конец корзины-->
+        </div>
+        <div class="clear"></div>
+    </div>
+</div>
+{% endblock %}
+
+{% block glavblog %}
+<div class="mens">
+	<div class="main">
+		<div class="wrap">
+			<ul class="breadcrumb breadcrumb__t"><a class="home" href="#">Home</a> / <a href="#">Услуги</a> / Lorem ipsum dolor sit amet</ul>
+			<div class="cont span_2_of_3">
+				<div class="grid images_3_of_2">
+					<ul id="etalage">
+						{% for photo in usluga_detail.image_usluga.filter %}
+						<li>
+							<a href="optionallink.html">
+
+								<img class="etalage_thumb_image" src="{{ photo.photo_gallery.url }}" class="img-responsive" />
+								<img class="etalage_source_image" src="{{ photo.photo_gallery.url }}" class="img-responsive" title="" />
+							</a>
+						</li>
+						{%endfor%}
+					</ul>
+					<div class="clearfix"></div>
+				</div>
+				<div class="desc1 span_3_of_2">
+					<h3 class="m_3">{{ usluga_detail.title_usluga }}</h3>
+					<p class="m_text2">{{ usluga_detail.body_usluga|safe }} </p><br>
+				</div>
+				<div class="clear"></div>
+				<div class="toogle">
+					<h3 class="m_3">{{ usluga_detail.title2_usluga|safe }}</h3>
+					<p class="m_text">{{ usluga_detail.body2_usluga|safe }}</p>
+					<div class="btn_form">
+						<form>
+							<input type="submit" value="Заказать" title="">
+						</form>
+					</div>
+
+				</div>
+			</div>
+			<div class="rsingle span_1_of_single">
+				<h5 class="m_1">Услуги</h5>
+				<ul class="kids">
+					{% for usluga in usluga %}
+					<li><a href="/usluga/{{ usluga.id }}">{{usluga.title_usluga}}</a></li>
+					{% endfor %}
+				</ul>
+				<script src="js/jquery.easydropdown.js"></script>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="clear"></div>
+	</div>
+</div>
+
+{% endblock %}

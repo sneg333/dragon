@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from ckeditor_uploader.fields import RichTextUploadingField
-
+# korzina
 
 class Dom(models.Model):
     dom_title = models.CharField(max_length=200, verbose_name='заголовок')
